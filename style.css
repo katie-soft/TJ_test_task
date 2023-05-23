@@ -1,0 +1,291 @@
+:root {
+  --text-color: #333333;
+  --heading-color: #111111;
+  --text-secondary-color:#808C9E;
+  --background-color-grey: #F1F3F5;
+  --background-color-yellow: #FFDD2D;
+  --font-size-regular: 17px;
+  --font-size-small: 15px;
+  --link-color: #597DB3;
+  --link-underline: 1px solid rgba(51, 111, 238, 0.2);
+  --link-hover-underline: 1px solid rgba(252,197,33,.2);
+  --link-hover-color: #fcc521;;
+}
+
+/*Common styles*/
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+.body {
+  margin: 0;
+}
+
+.article {
+  max-width: 784px;
+  margin: 5rem 0 5rem 12.5rem;
+  padding: 3rem;
+  border: 1px solid #DCE2E8;
+}
+
+/*Header*/
+.article__header {
+  margin-bottom: 3rem;
+}
+
+.header__content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--background-color-grey);
+}
+
+.article__label {
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 154%;
+  color: var(--text-color);
+  background-color: var(--background-color-yellow);
+  padding: 2px 10px 4px;
+}
+
+.title-wrapper {
+  max-width: 80%;
+}
+
+.article__title {
+  font-size: 36px;
+  line-height: 122%;
+  color: var(--heading-color);
+  margin-top: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.tags-list {
+  list-style: none;
+  display: flex;
+  gap: 0.75rem;
+  margin: 0.7rem 0 0;
+  padding: 0;
+}
+
+.meta__category,
+.tag__link {
+  font-size: var(--font-size-regular);
+  line-height: 165%;
+  color: var(--text-secondary-color);
+}
+
+.tag__link {
+  text-decoration: none;
+  background-color: var(--background-color-grey);
+  padding: 4px 0;
+}
+
+.tag__link:hover {
+  color: var(--text-color);
+}
+
+/*Main sections*/
+.article__section {
+  margin-bottom: 3rem;
+}
+
+.section__title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 28px;
+  line-height: 114%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.text {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: var(--font-size-regular);
+  line-height: 165%;
+}
+
+.text_bold {
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.article__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list__item {
+  margin-bottom: 1.5rem;
+}
+
+.list__item_task::before {
+  content: "👉";
+}
+
+.list__item_result::before {
+  content: "✅";
+}
+
+.link {
+  color: var(--link-color);
+  text-decoration: none;
+  border-bottom: var(--link-underline);
+  width: fit-content;
+}
+
+.link:hover {
+  color: var(--link-hover-color);
+  border-bottom: var(--link-hover-underline);
+}
+
+.quote__author {
+  display: flex;
+  margin: 0;
+}
+
+.author__img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: var(--background-color-grey);
+  padding: 15px;
+}
+
+.author__name {
+  max-width: 208px;
+  margin-left: 1rem;
+  font-size: 15px;
+  line-height: 133%;
+  color: var(--text-secondary-color);
+}
+
+/*Footer*/
+.article__footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+
+.footer__author {
+  color: var(--text-secondary-color);
+  font-size: 15px;
+}
+
+.footer__link {
+  font-size: 15px;
+}
+
+.alternate {
+  display: none;
+}
+
+/*Adaptive*/
+
+@media (max-width: 1020px) {
+  .article {
+    margin-left: 5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .article {
+    max-width: 608px;
+  }
+
+  .article__title {
+    font-size: 24px;
+    margin-bottom: 1.75rem;
+  }
+
+  .meta__category,
+  .tag__link,
+  .text {
+    font-size: var(--font-size-small);
+  }
+
+  .tag:last-child {
+    display: none;
+  }
+
+  .text {
+    margin-bottom: 0.75rem;
+  }
+
+  .section__title {
+    font-size: 21px;
+  }
+
+  .strong_optional {
+    font-weight: 400;
+  }
+
+  .list__item {
+    margin-bottom: 1rem;
+  }
+
+  .optional {
+    display: none;
+  }
+
+  .alternate {
+    display: block;
+  }
+}
+
+@media (max-width: 720px) {
+  .article {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+@media (max-width: 585px) {
+  .article {
+    padding: 1.5rem;
+  }
+
+  .header__content {
+    flex-direction: column;
+    margin-bottom: 0.75rem;
+  }
+
+  .article__title {
+    margin-top: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .tags-list {
+    flex-direction: column;
+  }
+
+  .tag:last-child {
+    display: block;
+  }
+
+  .article__section {
+    margin-bottom: 2rem;
+  }
+
+  .quote__author {
+    margin-top: 1.75rem;
+  }
+
+  .article__footer {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+}
